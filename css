@@ -96,7 +96,7 @@ body {
   padding: 0px;
   left: 0px;
   clip-path: url(#fillCM);
-  margin-left: 3px;
+  margin-left: 0px;
 }
 
 .front { 
@@ -105,21 +105,9 @@ body {
   width: 300px;
   height: 300px;
   bottom: 0px;
-  left: -10px;
+  left: 0px;
   z-index: 3;
   opacity: 1;
-}
-
-.backdrop { 
-  zoom: 120%;
-  position: absolute;
-  width: 300px;
-  height: 300px; 
-  margin: 0px;
-  bottom: 0px;
-  padding: 0px;
-  left: 0px;
-  opacity: 0.6;
 }
 
 .sbb {
