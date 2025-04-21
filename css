@@ -9,13 +9,13 @@
   to {opacity: 0.6;}
 }
 
+/* Animation สำหรับการเคลื่อนที่ของคลื่นน้ำ */
 @keyframes wave {
     from {
-        transform: translateX(-21%);
+        transform: translateX(-21%);  /* จุดเริ่มต้นการเคลื่อนที่ของคลื่น */
       }
-    
-      to {
-        transform: translateX(-50%);
+    to {
+        transform: translateX(-50%);  /* จุดสิ้นสุดการเคลื่อนที่ของคลื่น */
       }
 }
 
@@ -28,30 +28,33 @@
   }
 }
 
+/* Animation สำหรับการเคลื่อนที่ของเมฆ */
 @keyframes moveclouds {     
     0% { 
-        top: 90%;
+        top: 90%;  /* จุดเริ่มต้นของเมฆ */
     }
   98% {
     opacity: 1;
     transform: scale(1);
   }
     100% { 
-      top: 20px;
+      top: 20px;  /* จุดสิ้นสุดของเมฆ */
       transform: scale(2); 
       opacity: 0;
     }
 }
 
+/* Animation สำหรับการเคลื่อนที่ด้านข้าง */
 @keyframes sideWays {
   0% {
-      margin-left:0px;
+      margin-left:0px;  /* จุดเริ่มต้นการเคลื่อนที่ด้านข้าง */
   }
   100% {
-      margin-left:50px;
+      margin-left:50px;  /* จุดสิ้นสุดการเคลื่อนที่ด้านข้าง */
   }
 }
 
+/* Animation สำหรับการเคลื่อนที่ด้านข้างในทิศทางตรงข้าม */
 @keyframes sideWaysRight {
   0% {
       margin-left:0px;
@@ -92,10 +95,10 @@ body {
   width: 300px;
   height: 300px; 
   margin: 0px;
-  bottom: -50px;
+  bottom: -100px;
   padding: 0px;
-  left: 0px;
-  clip-path: url(#fillCM);
+  left: -60px;
+/*  clip-path: url(#fillCM); */
   margin-left: 0px;
 }
 
@@ -104,8 +107,8 @@ body {
   position: absolute;
   width: 300px;
   height: 300px;
-  bottom: 0px;
-  left: 0px;
+  bottom: -50px;
+  left: -60px;
   z-index: 3;
   opacity: 1;
 }
@@ -131,36 +134,38 @@ body {
   width: 70px;
 }
 
+/* ส่วนของน้ำด้านล่าง (น้ำดำ) */
 .fill {
-  background: linear-gradient(0deg, {fillcolor1} 0%, {fillcolor2} 100%);
-  filter: brightness(0.5);
+  background: linear-gradient(0deg, {fillcolor1} 0%, {fillcolor2} 100%);  /* สีของน้ำ */
+  filter: brightness(0.5);  /* ความสว่างของน้ำ */
   position: absolute;
   width: 450px;
   height: 300px;
-  bottom: 6px;
-  left: 0px;
+  bottom: 40px;  /* ระดับความสูงของน้ำ */
+  left: 80px;
   transform-origin: bottom;
   margin: 0px;
   padding-bottom: 100px;
-  clip-path: url(#movementCM);
-  animation: wave 3.5s infinite linear;
-  transition: top 1s ease-out;
+  clip-path: url(#movementCM);  /* รูปทรงของน้ำ */
+  animation: wave 3.5s infinite linear;  /* การเคลื่อนที่ของคลื่น */
+  transition: top 1s ease-out;  /* การเปลี่ยนแปลงระดับน้ำ */
 }
 
+/* ส่วนของน้ำด้านบน (น้ำขาว) */
 .fend {
   background: linear-gradient(0deg, {fillcolor1} 0%, {fillcolor2} 100%);
   position: absolute;
   width: 450px;
   height: 300px;
-  bottom: 6px;
-  left: 0px;
+  bottom: 40px;  /* ระดับความสูงของน้ำ */
+  left: 80px;
   transform-origin: bottom;
   margin: 0px;
   padding-bottom: 100px;
   clip-path: url(#movementCM);
-  animation: wave 3.5s infinite reverse linear;
-  transition: top 1s ease-out;
-  transform: translateX(-4%);
+  animation: wave 3.5s infinite reverse linear;  /* การเคลื่อนที่ของคลื่นในทิศทางตรงข้าม */
+  transition: top 1s ease-out;  /* การเปลี่ยนแปลงระดับน้ำ */
+  transform: translateX(-4%);  /* ตำแหน่งเริ่มต้นของคลื่น */
 }
 
 .bg {
@@ -258,74 +263,14 @@ body {
   font-weight: {titleFontWeight};
 }
 
-.h1 {
-  transform: scale(0.9);
-  opacity: 0.6;
-  left: 5%;
-  animation: moveclouds 2.75s linear infinite, sideWays 4s ease-in-out infinite alternate;
+/* ส่วนของเมฆแต่ละก้อน */
+.h1, .h2, .h3, .h4, .h5, .h6, .h7, .h8, .h9, .h10 {
+  /* การกำหนดขนาด, ความโปร่งใส, และตำแหน่งของเมฆแต่ละก้อน */
+  /* แต่ละก้อนมีการเคลื่อนที่ด้วยความเร็วและทิศทางที่แตกต่างกัน */
+  animation: moveclouds linear infinite, sideWays ease-in-out infinite alternate;
 }
 
-.h2 {
-  transform: scale(0.6);
-  opacity: 0.9;
-  left: 17%;
-  animation: moveclouds 2s linear infinite, sideWaysRight 7s ease-in-out infinite alternate;
-}
-
-.h3 {
-  transform: scale(0.6);
-  opacity: 0.8;
-  left: 29%;
-  animation: moveclouds 3s linear infinite, sideWays 3s ease-in-out infinite alternate;
-}
-
-.h4 {
-  transform: scale(0.75);
-  left: 41%;
-  opacity: 0.9;
-  animation: moveclouds 4s linear infinite, sideWaysRight 2s ease-in-out infinite alternate;
-}
-
-.h5 {
-  transform: scale(0.5);
-  left: 53%;
-  opacity: 0.3;
-  animation: moveclouds 1.5s linear infinite, sideWays 2.5s ease-in-out infinite alternate;
-}
-
-.h6 {
-  left: 45%;
-  opacity: 1;
-  animation: moveclouds 2.5s linear infinite, sideWays 5s ease-in-out infinite alternate;
-}
-
-.h7 {
-  transform: scale(0.4);
-  opacity: 0.6;
-  left: 10%;
-  animation: moveclouds 3.5s linear infinite, sideWays 3.5s ease-in-out infinite alternate;
-}
-
-.h8 {
-  transform: scale(0.8);
-  opacity: 0.8;
-  left: 60%;
-  animation: moveclouds 4.5s linear infinite, sideWays 4.5s ease-in-out infinite alternate;
-}
-
-.h9 {
-  opacity: 1;
-  left: 0%;
-  animation: moveclouds 5.5s linear infinite, sideWaysRight 6s ease-in-out infinite alternate;
-}
-
-.h10 {
-  transform: scale(0.3);
-  opacity: 0.8;
-  left: 35%;
-  animation: moveclouds 3.75s linear infinite, sideWays 5.5s ease-in-out infinite alternate;
-}
-
+/* ส่วนของฟองอากาศ */
 .cc {
   width: 5px;
   height: 5px;
@@ -338,15 +283,12 @@ body {
   z-index: -2;
 }
 
+/* ส่วนของ SVG สำหรับฟองอากาศ */
 .cc svg {
   width: 10px;
   height: 10px;
-  background: {fillcolor2};
-  background: none;
-  fill: #FFFFFF;
-  fill: rgba(255, 255, 255, 0.6);
   fill: {fillcolor2};
   z-index: -2;
-  filter: drop-shadow(0 0 1px {fillcolor2})
+  filter: drop-shadow(0 0 1px {fillcolor2})  /* เอฟเฟกต์เงา */
   drop-shadow(0 0 2px {fillcolor2});
 }
