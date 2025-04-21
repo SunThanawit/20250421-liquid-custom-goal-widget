@@ -1,0 +1,364 @@
+* {overflow: visible}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeIn {
+  from: {opacity: 0;}
+  to {opacity: 0.6;}
+}
+
+@keyframes wave {
+    from {
+        transform: translateX(-21%);
+      }
+    
+      to {
+        transform: translateX(-50%);
+      }
+}
+
+@keyframes anim {
+  0% {
+     top: 150px;
+  }
+  100% {
+     top: 170px;
+  }
+}
+
+@keyframes moveclouds {     
+    0% { 
+        top: 90%;
+    }
+  98% {
+    opacity: 1;
+    transform: scale(1);
+  }
+    100% { 
+      top: 20px;
+      transform: scale(2); 
+      opacity: 0;
+    }
+}
+
+@keyframes sideWays {
+  0% {
+      margin-left:0px;
+  }
+  100% {
+      margin-left:50px;
+  }
+}
+
+@keyframes sideWaysRight {
+  0% {
+      margin-left:0px;
+  }
+  100% {
+      margin-left: -50px;
+  }
+}
+
+.dropshadow {
+animation: fadeIn 1s ease forwards;
+}
+
+.textGlowing {
+  filter: drop-shadow(0 0 0px {fillcolor1}) drop-shadow(0 0 8px {fillcolor1});
+}
+
+.hue {
+  filter: hue-rotate({hue}deg);
+}
+
+.PGC {
+  filter: drop-shadow(0 0 3px {fillcolor2}) drop-shadow(0 0 7px {fillcolor1}) drop-shadow(0 0 19px {fillcolor2});
+  bottom: -3px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  transform: scale(0.{scalesize});
+  transform-origin: left center;
+}
+
+.CM {
+  zoom: 100%;
+  position: absolute;
+  width: 300px;
+  height: 300px; 
+  margin: 0px;
+  bottom: -50px;
+  padding: 0px;
+  left: 0px;
+  clip-path: url(#fillCM);
+  margin-left: 3px;
+}
+
+.front { 
+  zoom: 100%;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  bottom: 0px;
+  left: -10px;
+  z-index: 3;
+  opacity: 1;
+}
+
+.backdrop { 
+  zoom: 120%;
+  position: absolute;
+  width: 300px;
+  height: 300px; 
+  margin: 0px;
+  bottom: 0px;
+  padding: 0px;
+  left: 0px;
+  opacity: 0.6;
+}
+
+.sbb {
+  width: 200px;
+  left: 20px;
+  position: absolute;
+  height: 100%;
+  bottom: 0px;
+}
+
+.end-anim-obj { 
+  zoom: 50%;
+  bottom: 450px; 
+  width: 5px;
+  left: 215px;
+}
+
+.end-anim-obj2 {
+  bottom: 400px;
+  left: 80px;
+  width: 70px;
+}
+
+.fill {
+  background: linear-gradient(0deg, {fillcolor1} 0%, {fillcolor2} 100%);
+  filter: brightness(0.5);
+  position: absolute;
+  width: 450px;
+  height: 300px;
+  bottom: 6px;
+  left: 0px;
+  transform-origin: bottom;
+  margin: 0px;
+  padding-bottom: 100px;
+  clip-path: url(#movementCM);
+  animation: wave 3.5s infinite linear;
+  transition: top 1s ease-out;
+}
+
+.fend {
+  background: linear-gradient(0deg, {fillcolor1} 0%, {fillcolor2} 100%);
+  position: absolute;
+  width: 450px;
+  height: 300px;
+  bottom: 6px;
+  left: 0px;
+  transform-origin: bottom;
+  margin: 0px;
+  padding-bottom: 100px;
+  clip-path: url(#movementCM);
+  animation: wave 3.5s infinite reverse linear;
+  transition: top 1s ease-out;
+  transform: translateX(-4%);
+}
+
+.bg {
+  position: absolute;
+  height: 325px;
+  left: 60px;
+  bottom: 0px;
+  z-index: -3;
+}
+
+.back svg {
+  bottom: -20px;
+  position: absolute;
+}
+
+.textelement {
+  position: absolute;
+  width: 200px;
+  height: 180px;
+  margin: 0px;
+  padding: 0px;
+  top: 170px;
+  left: 100px;
+  overflow: visible;
+}
+
+.CT {
+  position: absolute;
+  width: 200px;
+  height: 180px;
+  margin: 0px;
+  padding: 0px;
+  top: 170px;
+  left: 100px;
+  overflow: visible;
+}
+
+.anim {
+  animation: anim 1s ease-in;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.water {
+  position: absolute;
+  object-fit: cover;
+  margin: 0px;
+  padding: 0px;
+  z-index: 2;
+}
+
+#T1 {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  display: block;
+  font-weight: {fontWeight};
+}
+
+.TR {
+  font-family: '{fontName}';
+  color: {fontColor};
+  position: absolute;
+  left: 230px;
+  top: 50%;
+  z-index: 3;
+  width: 300%;
+  text-align: left;
+  transform: translateY(-50%);
+  font-size: {fontSize}px;
+  visibility: hidden;
+}
+
+.TB {
+  font-family: '{fontName}';
+  color: {fontColor};
+  position: absolute;
+  left: 0px;
+  top: 220px;
+  z-index: 3;
+  width: 200%;
+  transform: translateX(-20%);
+  text-align: center;
+  font-size: {fontSize}px;
+  visibility: hidden;
+}
+
+.title {
+  position: relative;
+  z-index: 4;
+  font-size: {titleFontSize}px;
+  font-family: '{fontName}';
+  color: {titleFontColor};
+  margin-bottom: 0.5em;
+  font-weight: {titleFontWeight};
+}
+
+.h1 {
+  transform: scale(0.9);
+  opacity: 0.6;
+  left: 5%;
+  animation: moveclouds 2.75s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.h2 {
+  transform: scale(0.6);
+  opacity: 0.9;
+  left: 17%;
+  animation: moveclouds 2s linear infinite, sideWaysRight 7s ease-in-out infinite alternate;
+}
+
+.h3 {
+  transform: scale(0.6);
+  opacity: 0.8;
+  left: 29%;
+  animation: moveclouds 3s linear infinite, sideWays 3s ease-in-out infinite alternate;
+}
+
+.h4 {
+  transform: scale(0.75);
+  left: 41%;
+  opacity: 0.9;
+  animation: moveclouds 4s linear infinite, sideWaysRight 2s ease-in-out infinite alternate;
+}
+
+.h5 {
+  transform: scale(0.5);
+  left: 53%;
+  opacity: 0.3;
+  animation: moveclouds 1.5s linear infinite, sideWays 2.5s ease-in-out infinite alternate;
+}
+
+.h6 {
+  left: 45%;
+  opacity: 1;
+  animation: moveclouds 2.5s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+
+.h7 {
+  transform: scale(0.4);
+  opacity: 0.6;
+  left: 10%;
+  animation: moveclouds 3.5s linear infinite, sideWays 3.5s ease-in-out infinite alternate;
+}
+
+.h8 {
+  transform: scale(0.8);
+  opacity: 0.8;
+  left: 60%;
+  animation: moveclouds 4.5s linear infinite, sideWays 4.5s ease-in-out infinite alternate;
+}
+
+.h9 {
+  opacity: 1;
+  left: 0%;
+  animation: moveclouds 5.5s linear infinite, sideWaysRight 6s ease-in-out infinite alternate;
+}
+
+.h10 {
+  transform: scale(0.3);
+  opacity: 0.8;
+  left: 35%;
+  animation: moveclouds 3.75s linear infinite, sideWays 5.5s ease-in-out infinite alternate;
+}
+
+.cc {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  background: {fillcolor2};
+  background: none;
+  position: absolute;
+  display: none;
+  top: 200px;
+  z-index: -2;
+}
+
+.cc svg {
+  width: 10px;
+  height: 10px;
+  background: {fillcolor2};
+  background: none;
+  fill: #FFFFFF;
+  fill: rgba(255, 255, 255, 0.6);
+  fill: {fillcolor2};
+  z-index: -2;
+  filter: drop-shadow(0 0 1px {fillcolor2})
+  drop-shadow(0 0 2px {fillcolor2});
+}

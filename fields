@@ -1,0 +1,198 @@
+{
+  "fontSize": {
+    "type": "number",
+    "label": "Numbers font Size",
+    "step": 1,
+    "value": 20,
+    "group": "Font Setting"
+  },
+  "textglow": {
+    "type": "dropdown",
+    "label": "Text glow on/off",
+    "value": "on",
+    "options": {
+      "on": "On",
+      "off": "Off"
+    },
+    "group": "Effect and animation setting"
+  },
+  "timeframe": {
+    "type": "dropdown",
+    "label": "Goal time period:",
+    "options": {
+      "total": "Total",
+      "month": "Month",
+      "week": "Week",
+      "session": "Session",
+      "manual": "manual reset"
+    },
+    "group": "Goal Duration"
+  },
+  "fontWeight": {
+    "label": "Numbers font Thickness",
+    "type": "dropdown",
+    "options": {
+      "300": "Thin",
+      "400": "Regular",
+      "500": "Medium",
+      "600": "Semibold",
+      "700": "Bold"
+    },
+    "group": "Font Setting",
+    "value": "500"
+  },
+  "fgg": {
+    "type": "dropdown",
+    "label": "COlor glow on/off",
+    "value": "on",
+    "options": {
+      "on": "On",
+      "off": "Off"
+    },
+    "group": "Effect and animation setting"
+  },
+  "cce": {
+    "type": "dropdown",
+    "label": "Floating particles on goal Layouts on/off",
+    "value": "on",
+    "options": {
+      "on": "On",
+      "off": "Off"
+    },
+    "group": "Effect and animation setting"
+  },
+  "fontName": {
+    "type": "googleFont",
+    "label": "Font family",
+    "value": "Montserrat",
+    "group": "Font Setting"
+  },
+  "resubs": {
+    "label": "Count resubs",
+    "type": "checkbox",
+    "value": false,
+    "group": "Resub Count on/off"
+  },
+  "backop": {
+    "type": "slider",
+    "label": "Background opacity",
+    "value": 7,
+    "min": 0,
+    "max": 9,
+    "step": 1,
+    "group": "Color"
+  },
+  "goalType": {
+    "type": "dropdown",
+    "label": "Choose goal type:",
+    "value": "tip",
+    "options": {
+      "follower": "Followers goal",
+      "subscriber": "Sub goal",
+      "tip": "Donation goal",
+      "cheer": "Bits goal",
+      "raid": "Raid Goal"
+    },
+    "group": "Goal Type"
+  },
+  "rency": {
+    "label": "rencyrency",
+    "type": "text",
+    "value": "$",
+    "group": "Goal Setting"
+  },
+  "fillcolor2": {
+    "label": "Fill color 2",
+    "type": "colorpicker",
+    "group": "Color"
+  },
+  "goal": {
+    "type": "number",
+    "label": "Goal (number)",
+    "value": 100,
+    "step": 1,
+    "group": "Goal Setting"
+  },
+  "titleFontColor": {
+    "type": "colorpicker",
+    "label": "Goal font color",
+    "value": "rgb(255, 254, 254)",
+    "group": "Font Setting"
+  },
+  "animation": {
+    "type": "dropdown",
+    "label": "Goal animation on/off",
+    "value": "on",
+    "options": {
+      "on": "On",
+      "off": "Off"
+    },
+    "group": "Effect and animation setting"
+  },
+  "goalTitle": {
+    "type": "text",
+    "label": "Your goal Title",
+    "value": "Donation goal",
+    "group": "Goal Title"
+  },
+  "particles": {
+    "type": "dropdown",
+    "label": "Animated particles on/off",
+    "value": "on",
+    "options": {
+      "on": "On",
+      "off": "Off"
+    },
+    "group": "Effect and animation setting"
+  },
+  "fillcolor1": {
+    "label": "Fill color 1",
+    "type": "colorpicker",
+    "group": "Color"
+  },
+  "titleFontWeight": {
+    "label": "Title font Thickness",
+    "type": "dropdown",
+    "options": {
+      "300": "Thin",
+      "400": "Regular",
+      "500": "Medium",
+      "600": "Semibold",
+      "700": "Bold"
+    },
+    "group": "Font Setting",
+    "value": "700"
+  },
+  "scalesize": {
+    "type": "slider",
+    "label": "Goal layout size",
+    "value": 7,
+    "min": 1,
+    "max": 9,
+    "step": 1,
+    "group": "Goal Setting"
+  },
+  "fontColor": {
+    "type": "colorpicker",
+    "label": "Numbers font color",
+    "value": "rgb(255, 254, 254)",
+    "group": "Font Setting"
+  },
+  "titleFontSize": {
+    "type": "number",
+    "label": "Text Font size",
+    "value": 20,
+    "step": 1,
+    "group": "Font Setting"
+  },
+  "textpos": {
+    "type": "dropdown",
+    "label": "Text position",
+    "value": "bottom",
+    "options": {
+      "bottom": "Bottom",
+      "right": "Right"
+    },
+    "group": "Font Setting"
+  }
+}
