@@ -71,7 +71,7 @@ function _0xd08e(c, d) {
 function updateOnEvent() {
   const c = _0xd08e;
   goalRel = +sum / +goal * 100;
-  goalRel = goalRel * 0.5;
+  goalRel = goalRel * 0.45; /* เพิ่มลดการเปลี่ยนแปลงระดับน้ำ ยิ่งเยอะ น้ำยิ่งเพิ่มขึ้นมาก */
   if (goalRel > 0) {
     $(_0x38a6(92))[_0x5ba4(399)](c(441));
     $(_0x38a6(4))[_0x38a6(39)](_0x38a6(17), _0x38a6(84));
