@@ -83,8 +83,8 @@ function updateOnEvent() {
   if (goalRel >= 70) {
     goalRel = 70;
     if (fieldData[_0x38a6(46)] === "on") {
-      $(_0x38a6(85))[_0x38a6(56)](_0x38a6(86))[_0x5ba4(348)](_0x38a6(83));
-      $(_0x38a6(44))[_0x38a6(56)]("end-anim-obj2")[_0x38a6(37)](c(456));
+      $(_0x38a6(85))[_0x38a6(56)](_0x38a6(86))[_0x5ba4(348)](_0x38a6(83)).css("display", "block");
+      $(_0x38a6(44))[_0x38a6(56)]("end-anim-obj2")[_0x38a6(37)](c(456)).css("display", "block");
       $(_0x38a6(76))[_0x38a6(39)]({
         width: _0x38a6(0),
         height: _0x38a6(0)
@@ -191,6 +191,7 @@ function _0x903d() {
     }
   }
 })();
+
 window[_0x38a6(89)](_0x38a6(79), function (c) {
   const d = _0xd08e;
   fieldData = c[_0x38a6(74)][_0x38a6(67)];

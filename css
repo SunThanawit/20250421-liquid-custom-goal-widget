@@ -28,18 +28,34 @@
   }
 }
 
-/* Animation สำหรับการเคลื่อนที่ของเมฆ */
+/* Animation สำหรับการเคลื่อนที่ไปมาในแนวนอน */
+@keyframes sideWays {
+  0% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-left: 5px;
+  }
+}
+
+/* Animation สำหรับการเคลื่อนที่ของฟองอากาศ (จากล่างขึ้นบน) */
 @keyframes moveclouds {     
     0% { 
-        top: 90%;  /* จุดเริ่มต้นของเมฆ */
+        bottom: 0%;  /* จุดเริ่มต้นของฟองอากาศ (ด้านล่าง) */
+        opacity: 0;
+        transform: scale(0.8);
     }
-  98% {
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
     opacity: 1;
     transform: scale(1);
   }
     100% { 
-      top: 20px;  /* จุดสิ้นสุดของเมฆ */
-      transform: scale(2); 
+      bottom: 100%;  /* จุดสิ้นสุดของฟองอากาศ (ด้านบน) */
+      transform: scale(0.8); 
       opacity: 0;
     }
 }
@@ -276,19 +292,23 @@ body {
   height: 5px;
   border-radius: 50px;
   background: {fillcolor2};
-  background: none;
   position: absolute;
-  display: none;
-  top: 200px;
-  z-index: -2;
+  display: block;
+  /* ไม่กำหนดตำแหน่งตายตัวที่นี่ เพราะจะกำหนดใน JavaScript */
+  z-index: 2;
+  animation: moveclouds 8s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.end-anim-obj, .end-anim-obj2 {
+  display: block !important;
 }
 
 /* ส่วนของ SVG สำหรับฟองอากาศ */
 .cc svg {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   fill: {fillcolor2};
-  z-index: -2;
-  filter: drop-shadow(0 0 1px {fillcolor2})  /* เอฟเฟกต์เงา */
-  drop-shadow(0 0 2px {fillcolor2});
+  z-index: 3;
+  filter: drop-shadow(0 0 2px {fillcolor2})  /* เอฟเฟกต์เงา */
+  drop-shadow(0 0 4px {fillcolor2});
 }
