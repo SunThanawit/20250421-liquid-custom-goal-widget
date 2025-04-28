@@ -28,34 +28,20 @@
   }
 }
 
-/* Animation สำหรับการเคลื่อนที่ไปมาในแนวนอน */
-@keyframes sideWays {
-  0% {
-    margin-left: -5px;
-  }
-  100% {
-    margin-left: 5px;
-  }
-}
-
-/* Animation สำหรับการเคลื่อนที่ของฟองอากาศ (จากล่างขึ้นบน) */
+/* Animation สำหรับการเคลื่อนที่ของเมฆ */
 @keyframes moveclouds {     
     0% { 
-        bottom: 0%;  /* จุดเริ่มต้นของฟองอากาศ (ด้านล่าง) */
-        opacity: 0;
-        transform: scale(0.8);
+        top: 150px;  /* จุดเริ่มต้นของฟองอากาศ (เหนือ Lazly3D) */
+        opacity: 1;
+        transform: scale(1);
     }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  80% {
+  98% {
     opacity: 1;
     transform: scale(1);
   }
     100% { 
-      bottom: 100%;  /* จุดสิ้นสุดของฟองอากาศ (ด้านบน) */
-      transform: scale(0.8); 
+      top: 0px;  /* จุดสิ้นสุดของฟองอากาศ (ด้านบน) */
+      transform: scale(0.7); 
       opacity: 0;
     }
 }
@@ -292,12 +278,25 @@ body {
   height: 5px;
   border-radius: 50px;
   background: {fillcolor2};
+  background: none;
   position: absolute;
   display: block;
-  /* ไม่กำหนดตำแหน่งตายตัวที่นี่ เพราะจะกำหนดใน JavaScript */
+  left: 90px; /* ตำแหน่งตรงกลางเหนือโลโก้ */
   z-index: 2;
   animation: moveclouds 8s linear infinite, sideWays 4s ease-in-out infinite alternate;
 }
+
+/* ปรับตำแหน่งแต่ละฟอง */
+.h1 { left: 95px; animation-duration: 8s, 4s; animation-delay: 0s, 0s; }
+.h2 { left: 75px; animation-duration: 9s, 5s; animation-delay: 0.5s, 1s; }
+.h3 { left: 110px; animation-duration: 7s, 3s; animation-delay: 1s, 0.5s; }
+.h4 { left: 65px; animation-duration: 10s, 6s; animation-delay: 1.5s, 1.5s; }
+.h5 { left: 120px; animation-duration: 7.5s, 4.5s; animation-delay: 2s, 0.7s; }
+.h6 { left: 85px; animation-duration: 8.5s, 5.5s; animation-delay: 2.5s, 1.2s; }
+.h7 { left: 100px; animation-duration: 9.5s, 3.5s; animation-delay: 3s, 0.3s; }
+.h8 { left: 70px; animation-duration: 8.3s, 4.7s; animation-delay: 3.5s, 1.7s; }
+.h9 { left: 115px; animation-duration: 7.7s, 5.2s; animation-delay: 4s, 0.9s; }
+.h10 { left: 80px; animation-duration: 8.8s, 4.3s; animation-delay: 4.5s, 1.3s; }
 
 .end-anim-obj, .end-anim-obj2 {
   display: block !important;
@@ -305,10 +304,10 @@ body {
 
 /* ส่วนของ SVG สำหรับฟองอากาศ */
 .cc svg {
-  width: 15px;
-  height: 15px;
-  fill: {fillcolor2};
-  z-index: 3;
-  filter: drop-shadow(0 0 2px {fillcolor2})  /* เอฟเฟกต์เงา */
-  drop-shadow(0 0 4px {fillcolor2});
+  width: 10px;
+  height: 10px;
+  fill: #ff66ff; /* เปลี่ยนสีของฟองให้ชัดเจนเป็นสีชมพู */
+  z-index: -2;
+  filter: drop-shadow(0 0 1px #ff66ff)  /* เอฟเฟกต์เงา */
+  drop-shadow(0 0 2px #ff66ff);
 }

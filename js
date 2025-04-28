@@ -191,6 +191,57 @@ function _0x903d() {
     }
   }
 })();
+// ฟังก์ชันสำหรับสร้าง particle (ฟองอากาศ) หลายๆ อัน
+function createParticles() {
+  // ลบ particle เก่าออกก่อน
+  $('.cc').remove();
+  
+  // สร้าง particle ใหม่หลายๆ อัน
+  const particleCount = 15; // จำนวน particle ที่ต้องการสร้าง
+  
+  for (let i = 0; i < particleCount; i++) {
+    // สร้าง element ใหม่สำหรับ particle
+    const particle = document.createElement('div');
+    $(particle).addClass('cc');
+    
+    // สุ่มตำแหน่งเริ่มต้น
+    const randomLeft = Math.floor(Math.random() * 200) + 50; // สุ่มตำแหน่งแกน x
+    const randomTop = Math.floor(Math.random() * 100) + 150; // สุ่มตำแหน่งแกน y
+    
+    // สุ่มขนาดของ particle
+    const randomSize = Math.floor(Math.random() * 10) + 5;
+    
+    // สุ่มความเร็วในการเคลื่อนที่
+    const randomDuration = Math.floor(Math.random() * 10) + 10;
+    
+    // กำหนดสไตล์ให้กับ particle
+    $(particle).css({
+      'left': randomLeft + 'px',
+      'top': randomTop + 'px',
+      'width': randomSize + 'px',
+      'height': randomSize + 'px',
+      'animation-duration': randomDuration + 's, ' + (randomDuration/2) + 's'
+    });
+    
+    // สร้าง SVG สำหรับ particle
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    
+    // กำหนดคุณสมบัติให้กับ circle
+    circle.setAttribute('cx', '5');
+    circle.setAttribute('cy', '5');
+    circle.setAttribute('r', '5');
+    
+    // เพิ่ม circle เข้าไปใน SVG
+    svg.appendChild(circle);
+    
+    // เพิ่ม SVG เข้าไปใน particle
+    particle.appendChild(svg);
+    
+    // เพิ่ม particle เข้าไปในหน้าเว็บ
+    $(particle).appendTo($('body'));
+  }
+}
 
 window[_0x38a6(89)](_0x38a6(79), function (c) {
   const d = _0xd08e;
@@ -222,6 +273,10 @@ window[_0x38a6(89)](_0x38a6(79), function (c) {
   }
   if (fieldData[_0x38a6(6)] === "on") {
     $(_0x5ba4(351))[_0x38a6(56)](_0x38a6(96));
+    // เรียกใช้ฟังก์ชันสร้าง particle
+    createParticles();
+    // สร้าง particle ใหม่ทุกๆ 20 วินาที
+    setInterval(createParticles, 20000);
   }
   goal = fieldData[_0x38a6(54)];
   goalData = c[_0x38a6(74)][_0x38a6(57)][_0x38a6(42)];
